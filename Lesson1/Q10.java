@@ -1,6 +1,5 @@
 package Lesson1;
 
-import java.security.DrbgParameters.Reseed;
 
 public class Q10 {
     public static void main(String[] args) {

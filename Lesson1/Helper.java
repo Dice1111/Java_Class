@@ -29,6 +29,10 @@ public class Helper {
         return s;
     }
 
+    public static double roundToTwoDecimal(double value) {
+        return Math.round(value*100.0)/100.0;
+    }
+
     public static void main(String[] args) {
 
     }
