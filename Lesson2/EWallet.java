@@ -49,6 +49,16 @@ public class EWallet {
         }
     }
 
+    public boolean equals(EWallet ew){
+        boolean equals = false;
+        if(this.serialNumber.equals(ew.getSerialNumber())){
+            if(this.balance==ew.getBalance()){
+                equals = true;
+            }
+        }
+
+        return equals;
+    }
 
     public void display(){
         System.out.println("Serial Number: "+this.serialNumber);
