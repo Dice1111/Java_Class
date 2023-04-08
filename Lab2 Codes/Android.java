@@ -9,11 +9,12 @@ public class Android {
 		//fill in your codes
 		
 		this.name = "Bob"+String.valueOf(tag);
+		changeTag();
 	}
 	
 	public String getName() {
 		//fill in your codes
-		changeTag();
+		
 		return name;
 	}
 	public int getTag(){
