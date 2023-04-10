@@ -9,7 +9,13 @@ public class Q16B {
 
     public static void main(String[] args) {
         init();
+        displayall();
         displayAveragePrice();
+        displaymostExpensiveItem();
+        displayBelowAveragePrice();
+        displayItemPrice();
+        bubbleSort();
+        System.out.println("After bubble sort:");
         displayall();
         
     }
@@ -38,7 +44,7 @@ public class Q16B {
         // }
         // double ave = total/prices.length;
         double ave = Helper.roundToTwoDecimal(getAveragePrice());
-        System.out.println("Average price$"+ave);
+        System.out.println("Average price: "+ave);
     }
 
     private static double getAveragePrice(){
@@ -49,5 +55,59 @@ public class Q16B {
         double ave=total/prices.length;
         ave = Helper.roundToTwoDecimal(ave);
         return ave;
-    }   
+    }  
+    
+    private static void displaymostExpensiveItem(){
+        Item mostExpensive = items.get(0);
+        for(Item item:items){
+            if(item.isMoreExpensive(mostExpensive)){
+                mostExpensive = item;
+            }
+        }
+        System.out.println("Most expensive item: ");
+        mostExpensive.display();
+    }
+
+    private static void displayBelowAveragePrice(){
+        System.out.println("Below ave price item:");
+        double ave = getAveragePrice();
+        for(Item item: items){
+            if(item.isBelowPrice(ave)){
+                item.display();
+            }
+        }
+    }
+
+    private static void displayItemPrice() {
+        System.out.println("Display Item Price:");
+        String itemCodeToSearch = "G543";
+        boolean found =false;
+        for(Item item:items){
+            if(item.isItemCode(itemCodeToSearch)){
+                item.display();
+                found = true;
+                break;
+            }
+        }
+        if(!found){
+            System.out.println("Item not found.");
+        }
+    }
+
+    private static void bubbleSort() {
+        boolean swap = true;
+        while(swap){
+            swap = false;
+            for(int i=1;i<items.size();i++){
+                Item item1 = items.get(i-1);
+                Item item2 = items.get(i);
+                if(item1.isMoreExpensive(item2)){
+                    items.set(i-1,item2);
+                    items.set(i,item1);
+                    swap=true;
+                }
+            }
+        }
+    }
+
 }
