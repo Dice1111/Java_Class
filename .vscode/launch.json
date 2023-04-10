@@ -1,0 +1,46 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Q16B",
+            "request": "launch",
+            "mainClass": "Lesson1.Q16B",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}",
+            "vmArgs": "-enableassertions"
+        },
+        {
+            "type": "java",
+            "name": "AndroidTest",
+            "request": "launch",
+            "mainClass": "AndroidTest",
+            "projectName": "java_ca0ae1b6",
+            "vmArgs": "-enableassertions"
+        },
+        {
+            "type": "java",
+            "name": "TemperatureTest",
+            "request": "launch",
+            "mainClass": "TemperatureTest",
+            "projectName": "java_ca0ae1b6",
+            "vmArgs": "-enableassertions"
+        },
+        {
+            "type": "java",
+            "name": "Test",
+            "request": "launch",
+            "mainClass": "Test",
+            "projectName": "java_ca0ae1b6",
+            "vmArgs": "-enableassertions"
+        }
+    ]
+}

@@ -10,6 +10,7 @@ public class Q16B {
     public static void main(String[] args) {
         init();
         displayAveragePrice();
+        displayall();
         
     }
 
@@ -24,13 +25,19 @@ public class Q16B {
         }
     }
 
-    private static void displayAveragePrice(){
-        double total = 0;
-        for(double price: prices){
-            total+=price;
+    public static void displayall(){
+        for(Item item: items){
+            item.display();
         }
-        double ave = total/prices.length;
-        ave = Helper.roundToTwoDecimal(ave);
+    }
+
+    private static void displayAveragePrice(){
+        // double total = 0;
+        // for(double price: prices){
+        //     total+=price;
+        // }
+        // double ave = total/prices.length;
+        double ave = Helper.roundToTwoDecimal(getAveragePrice());
         System.out.println("Average price$"+ave);
     }
 
