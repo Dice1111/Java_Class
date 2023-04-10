@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "EWalletMain",
+            "request": "launch",
+            "mainClass": "Lesson2.EWalletMain",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "TaxCalculator",
+            "request": "launch",
+            "mainClass": "Lesson2.TaxCalculator",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
             "name": "Q16B",
             "request": "launch",
             "mainClass": "Lesson1.Q16B",

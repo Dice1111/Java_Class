@@ -24,12 +24,9 @@ public class Android {
 	public static void changeTag() {
 		//fill in your codes
 		tag++;
-		
 		for(int i=2;i<tag;i++){
 			if(i!=tag && tag%i==0){	
 				changeTag();
-			}else if(i == tag){
-				continue;
 			}
 		}
 	}
