@@ -110,4 +110,35 @@ public class EWalletMain {
         }
     }
 
+    private static void searchBySerialnumberBinarySearch() {
+        String serialNumberToSearch = "D432";
+        int index = binarySearchIndex(serialNumberToSearch);
+        if(index != -1){
+            eWalletsSortBySerialNumber.get(index).display();
+        }else{
+            System.out.println("Serial number not found");
+        }
+    }
+
+    private static int binarySearchIndex(String serialNumberToSearch){
+        int first = 0;
+        int last = eWalletsSortBySerialNumber.size()-1;
+        int mid = 0;
+
+        while(first<=last){
+            mid = first+(last-first)/2;
+            EWallet ew = eWalletsSortBySerialNumber.get(mid);
+            String serialNumber = ew.getSerialNumber();
+            if (serialNumber.equals(serialNumberToSearch)){
+                return mid;
+            }else if(serialNumberToSearch.compareTo(serialNumber)<0){
+                last = mid -1;
+            }else{
+                first = mid+1;
+            }
+
+        }
+        return -1;
+    }
+
 }
