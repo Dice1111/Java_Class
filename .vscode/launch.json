@@ -6,6 +6,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Player",
+            "request": "launch",
+            "mainClass": "Assignment1_Example.Player",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "Deck",
+            "request": "launch",
+            "mainClass": "Assignment1_Example.Deck",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "Player",
+            "request": "launch",
+            "mainClass": "Player",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "GameModule",
+            "request": "launch",
+            "mainClass": "GameModule",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "Deck",
+            "request": "launch",
+            "mainClass": "Deck",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "Card",
+            "request": "launch",
+            "mainClass": "Card",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
             "name": "EWalletMain",
             "request": "launch",
             "mainClass": "Lesson2.EWalletMain",
