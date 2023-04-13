@@ -33,17 +33,14 @@ public class Deck {
         return cards.remove(0);
     }
 
-    // add nack one card
-    public void appendCard(Card card) {
-        cards.add(card);
-    }
-
     // add back arraylist of card
     public void appendCard(ArrayList<Card> cards) {
         for (Card c : cards) {
             this.cards.add(c);
         }
     }
+
+
 
     public void shuffle() {
         Random random = new Random();

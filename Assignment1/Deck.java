@@ -42,6 +42,10 @@ public class Deck {
             this.cards.add(c);
         }
     }
+    
+    public void removeAllCard(ArrayList<Card> cards){
+        cards.removeAll(cards);
+    }
 
     public void shuffle() {
         

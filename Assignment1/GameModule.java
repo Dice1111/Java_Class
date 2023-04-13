@@ -10,60 +10,64 @@ public class GameModule {
     }
 
     public void run() {
-        // game start here
-        // player.playerEnter();
-        System.out.println("HighSum Game\n");
-        player.userLoginName(player);
-        player.showPlayerInfo();
-        dealer.shuffleCards();
+        boolean run = true;
+        while(run){
+            player.userLoginName(player);
+            player.showPlayerInfo();
 
-        // System.out.println("\nRound 1..............\n");
-        // dealer.dealCardTo(dealer);
-        // dealer.dealCardTo(player);
-        // dealer.dealCardTo(dealer);
-        // dealer.dealCardTo(player);
-        // dealer.showCardsOnHand();
-        // System.out.println();
-        // player.showCardsOnHand();
-        // System.out.println("Show value: "+player.getTotalCardsValue());
-
-        //init cards....
-        dealer.dealCardToAll(dealer,player);
-        
-        for(int i=1;i<5;i++){
-        System.out.println("\nRound "+i+"...............\n");
-        dealer.dealCardToAll(dealer,player);
-        dealer.showCardsOnHand();
-        System.out.println();
-        player.showCardsOnHand();
-        System.out.println("Show value: "+player.getTotalCardsValue());
-        //bet.......
-        player.betting(dealer,player);
-
+            boolean gameLoop = true;
+            while(gameLoop){
+                dealer.shuffleCards();
+                dealer.dealCardToAll(dealer,player);
+                roundStart(dealer, player);
+                // roundEnd(dealer, player);
+                dealer.roundReset(dealer, player);
+                if(!checkAnotherGame()){
+                break;
+                }
+                
+            }
+            break;
         }
-        
-        // System.out.println(player.getSuitLevel());
-        // System.out.println(dealer.getSuitLevel());
-        // player.showTotalCardsValue();
-        // dealer.showTotalCardsValue();
-        // System.out.println(dealer.checkTurn(player, dealer));
-        // System.out.println(player.getCardsOnHand().get(player.getCardsOnHand().size()-1).getValue());
-   
+
     }
 
-    // public void dealCardToAll(){
-    //     dealer.dealCardTo(dealer);
-    //     dealer.dealCardTo(player);
-    // }
 
-    // public void betting(){
-    //     String turn = dealer.checkTurn(dealer, player);
-    //     if(turn == "dealer"){
-    //         System.out.println(turn);
-    //     }else if(turn=="player"){
-    //         System.out.println(turn);
-    //     }
-    // }
+    public void roundStart(Dealer dealer,Player player){
+        System.out.println("\nHighSum Game\n");
+        for(int i=1;i<5;i++){
+            System.out.println("\nDealer dealing cards - ROUND "+i+"\n");
+            dealer.dealCardToAll(dealer,player);
+            dealer.showCardsOnHand(false);
+            System.out.println();
+            player.showCardsOnHand(false);
+            System.out.println("Show value: "+player.getTotalCardsValue());
+            //bet.......
+            boolean betting = player.betting(dealer,player,i);
+            if(!betting){
+                break;
+            }else if(betting){
+                roundEnd(dealer, player);
+            }   
+        } 
+        
+    }
+
+    public void roundEnd(Dealer dealer,Player player){
+        System.out.println("\nGame End - Dealer reveal hidden cards");
+        dealer.showCardsOnHand(true);
+        System.out.println("Show value: "+dealer.getTotalCardsValue());
+        System.out.println();
+        player.showCardsOnHand(true);
+        System.out.println("Show value: "+player.getTotalCardsValue());
+        player.comparePoint(dealer, player);
+    }
+
+
+    public boolean checkAnotherGame(){
+        boolean condition =Keyboard.readBoolean("Next Game? (Y/N) > ");
+        return condition;
+    }
 
     public static void main(String[] args) {
         GameModule app = new GameModule();

@@ -37,8 +37,21 @@ public class Dealer extends Player {
     }
 
     public void dealCardToAll(Dealer dealer,Player player){
-        dealCardTo(dealer);
         dealCardTo(player);
+        dealCardTo(dealer);
+        
+    }
+
+
+
+    public void roundReset(Dealer dealer,Player player){
+        deck.appendCard(dealer.cardsOnHand);
+        deck.appendCard(player.cardsOnHand);
+        deck.removeAllCard(dealer.cardsOnHand);
+        deck.removeAllCard(player.cardsOnHand);
+        dealer.setChips();
+        player.setChips();
+        dealer.setBetOntable();
     }
 
 

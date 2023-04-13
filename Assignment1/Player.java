@@ -4,7 +4,7 @@ import java.util.*;
 public class Player extends User {
     private int chips;
     protected ArrayList<Card> cardsOnHand;
-    private static int betOnTable;
+    private static int betOnTable = 0;
 
 
 
@@ -22,18 +22,22 @@ public class Player extends User {
         return this.chips;
     }
 
+    public void setChips(){
+        this.chips = 100;
+    }
+    public void setBetOntable(){
+        betOnTable = 0;
+    }
+
     public void deductChips(int amount){
-        if(amount<=chips){
-            System.out.println("yes");
             this.chips -= amount;
-        }else if(amount>chips){
-            System.out.println("Sorry, you have no chips!");
-        }
     }
 
     public void addChipToTable(int amount){
        betOnTable += amount;
     }
+
+
 
     public int getBetOnTable(){
         return betOnTable;
@@ -47,12 +51,21 @@ public class Player extends User {
         return this.cardsOnHand;
     }
 
-    public void showCardsOnHand() {
+    public void showCardsOnHand(Boolean roundEnd) {
         System.out.println(getLoginName());
-        for (Card c : cardsOnHand) {
-            System.out.print(c + " ");
+
+        if(roundEnd){
+            for (Card c : cardsOnHand) {
+                System.out.print(c + " ");
+            }
+            System.out.println();
+        }else if(!roundEnd){
+            System.out.print("<HIDDEN CARD> ");
+            for(int i =1; i<cardsOnHand.size();i++){
+                System.out.print(cardsOnHand.get(i) + " ");
+            }
+            System.out.println();
         }
-        System.out.println();
     }
 
     public void showTotalCardsValue() {
@@ -81,44 +94,74 @@ public class Player extends User {
     }
     
     //player start betting
-    public void betting(Dealer dealer,Player player){
+    public boolean betting(Dealer dealer,Player player,int i){
+        boolean  betting  = true;
         String turn = dealer.checkTurn(dealer, player);
         if(turn == "dealer"){
             System.out.println(turn);
             int amount = 10;
             System.out.println("\nDealer call, state bet: "+amount);
-            dealer.addChipToTable(amount);
+           
             dealer.deductChips(amount);
+            dealer.addChipToTable(amount);
 
             //player bet or not...
             Boolean playerCall = Keyboard.readBoolean("\nDo you want to follow? [Y/N]:");
             if(playerCall){
-                player.addChipToTable(amount);
                 player.deductChips(amount);
+                player.addChipToTable(amount);
             }else{
-                System.out.println("No");
+                System.out.println(player.getLoginName()+" Loses.");
+                betting = false;
+                return betting;
             }
-               
-            System.out.println(playerCall);
-            System.out.println(betOnTable);
             System.out.println("dealer: "+dealer.getChips());
             System.out.println(player.getLoginName()+","+"You are left with "+player.getChips());
+            System.out.println("Bet on Table: "+betOnTable);
 
         }else if(turn=="player"){
-            System.out.println(turn);
-            int amount = Keyboard.readInt("\nPlayer call, state bet: ");
-            player.addChipToTable(amount);
+
+            if(i>1){
+                String playerPlay = Keyboard.readString("Do you want to [C]all or [Q]uit?: ");
+                if(playerPlay.equalsIgnoreCase("Q")){
+                   System.out.println(player.getLoginName()+" Loses.");
+                   betting = false;
+                   return betting;
+                }
+            }
+            //player turn.....
+            int amount = playerBet(player);  
             player.deductChips(amount);
-
+            player.addChipToTable(amount);
             //dealer turn.....
-            dealer.addChipToTable(amount);
             dealer.deductChips(amount);
+            dealer.addChipToTable(amount);
 
-            System.out.println(betOnTable);
             System.out.println("dealer: "+dealer.getChips());
             System.out.println(player.getLoginName()+","+"You are left with "+player.getChips());
+            System.out.println("Bet on Table: "+betOnTable);                
+        }
+        return betting;
+    }
 
-                
+
+    public int playerBet(Player player){
+        int amount = Keyboard.readInt("\nPlayer call, state bet: ");
+        while(amount>player.getChips()){
+            System.out.println("Not enough Chips.");
+            amount = Keyboard.readInt("\nPlayer call, state bet: ");    
+        }
+        
+        return amount;
+    }
+
+    public void comparePoint(Dealer dealer,Player player){
+        if(dealer.getTotalCardsValue()<player.getTotalCardsValue()){
+            System.out.println( player.getLoginName()+" Wins");
+        }else if(dealer.getTotalCardsValue()==player.getTotalCardsValue()){
+            System.out.println("Draw.");
+        }else if(dealer.getTotalCardsValue()>player.getTotalCardsValue()){
+            System.out.println(player.getLoginName()+ " Loses");
         }
     }
 
@@ -174,7 +217,7 @@ public class Player extends User {
         player.addCard(card1);
         player.addCard(card2);
         player.addCard(card3);
-        player.showCardsOnHand();
+        player.showCardsOnHand(true);
         player.showTotalCardsValue();
     }
 }
