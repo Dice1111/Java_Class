@@ -36,19 +36,11 @@ public class Dealer extends Player {
         player.addCard(card);//add card to player hand
     }
 
-    public void dealCardToAll(Player dealer,Player player){
+    public void dealCardToAll(Dealer dealer,Player player){
         dealCardTo(dealer);
         dealCardTo(player);
     }
 
-    public void betting(Player dealer,Player player){
-        String turn = checkTurn(dealer, player);
-        if(turn == "dealer"){
-            System.out.println(turn);
-            String amount = Keyboard.readString("Enter banana: ");
-        }else if(turn=="player"){
-            System.out.println(turn);
-        }
-    }
+
 
 }

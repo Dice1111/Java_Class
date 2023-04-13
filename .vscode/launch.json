@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Example",
+            "request": "launch",
+            "mainClass": "Assignment1_Example.Example",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
             "name": "Player",
             "request": "launch",
             "mainClass": "Assignment1_Example.Player",

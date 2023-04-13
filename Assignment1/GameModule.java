@@ -30,7 +30,7 @@ public class GameModule {
         //init cards....
         dealer.dealCardToAll(dealer,player);
         
-        for(int i=1;i<4;i++){
+        for(int i=1;i<5;i++){
         System.out.println("\nRound "+i+"...............\n");
         dealer.dealCardToAll(dealer,player);
         dealer.showCardsOnHand();
@@ -38,7 +38,7 @@ public class GameModule {
         player.showCardsOnHand();
         System.out.println("Show value: "+player.getTotalCardsValue());
         //bet.......
-        dealer.betting(dealer,player);
+        player.betting(dealer,player);
 
         }
         
