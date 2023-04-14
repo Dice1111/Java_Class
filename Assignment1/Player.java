@@ -85,6 +85,19 @@ public class Player extends User {
         return suitLevel;
     }
 
+    public int getCardLevel(){
+        int cardLevel = 0;
+        Card lastCard = cardsOnHand.get(cardsOnHand.size()-1);
+        String []name  ={"10", "Jeck", "King", "Queen"};
+        for (int i=0;i<name.length;i++){
+            if(name[i]==lastCard.getSuit()){
+                cardLevel = i;
+                break;
+            }
+        }
+        return cardLevel;   
+    }
+
     public int getTotalCardsValue() {
         int total = 0;
         for (Card c : this.cardsOnHand) {
@@ -110,7 +123,7 @@ public class Player extends User {
             if(playerCall){
                 player.deductChips(amount);
                 player.addChipToTable(amount);
-            }else{
+            }else if(!playerCall){
                 System.out.println(player.getLoginName()+" Loses.");
                 betting = false;
                 return betting;

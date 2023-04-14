@@ -17,15 +17,33 @@ public class Dealer extends Player {
         int playerSuitLevel = player.getSuitLevel();
         int dealerCardValue = dealer.getCardsOnHand().get(dealer.getCardsOnHand().size()-1).getValue();
         int dealerSuitLevel = dealer.getSuitLevel();
+        
         if(playerCardValue>dealerCardValue){
             turn = "player";
-        }else if(playerCardValue==dealerCardValue){
-            if(playerSuitLevel>dealerSuitLevel){
+
+        }
+        else if(playerCardValue==dealerCardValue){
+            int dealerCardLevel = dealer.getCardLevel();
+            int playerCardLevel = player.getCardLevel();
+             
+            if(dealerCardLevel>playerCardLevel){
+                turn = "dealer";
+            }else if(dealerCardLevel<playerCardLevel){
                 turn = "player";
-            }else if(playerSuitLevel<dealerSuitLevel){
-                turn ="dealer";
+            }else if(dealerCardLevel==playerCardLevel){
+            
+                if(playerSuitLevel>dealerSuitLevel){
+                    turn = "player";
+                }else if(playerSuitLevel==dealerSuitLevel){
+                
+                    
+                }else if(playerSuitLevel<dealerSuitLevel){
+                    turn ="dealer";
+                }
             }
-        }else if(playerCardValue<dealerCardValue){
+
+        }
+        else if(playerCardValue<dealerCardValue){
             turn = "dealer";
         }
         return turn;

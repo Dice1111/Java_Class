@@ -40,13 +40,16 @@ public class GameModule {
             dealer.dealCardToAll(dealer,player);
             dealer.showCardsOnHand(false);
             System.out.println();
-            player.showCardsOnHand(false);
+            player.showCardsOnHand(true);
             System.out.println("Show value: "+player.getTotalCardsValue());
             //bet.......
             boolean betting = player.betting(dealer,player,i);
             if(!betting){
                 break;
-            }else if(betting){
+            }
+            
+            if(i==4){
+                System.out.println(betting);
                 roundEnd(dealer, player);
             }   
         } 
