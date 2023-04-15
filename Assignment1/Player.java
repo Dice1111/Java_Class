@@ -114,6 +114,9 @@ public class Player extends User {
     public boolean betting(Dealer dealer,Player player,int i){
         boolean  betting  = true;
         String turn = dealer.checkTurn(dealer, player);
+        if(player.getChips()<10){
+            return betting = false;
+        }
         if(turn == "dealer"){
             // System.out.println(turn);    
             int amount = 10;

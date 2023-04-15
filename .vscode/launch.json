@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "PetShelter",
+            "request": "launch",
+            "mainClass": "Lesson4.PetShelter",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "GameModule",
+            "request": "launch",
+            "mainClass": "Assignment1_Example.GameModule",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
             "name": "Example",
             "request": "launch",
             "mainClass": "Assignment1_Example.Example",
