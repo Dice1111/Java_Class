@@ -6,13 +6,17 @@ public class GameModule {
 
     public GameModule() {
         dealer = new Dealer();
-        player = new Player("a", "a", 100);
+        player = new Player("IcePeak", "password", 100);
     }
 
     public void run() {
         boolean run = true;
         while(run){
+            System.out.println("HighSum GAME");
+            GameUI.underLine();
             player.userLoginName(player);
+            System.out.println("\nHighSum GAME");
+            GameUI.underLine();
             player.showPlayerInfo();
 
             boolean gameLoop = true;
@@ -34,14 +38,15 @@ public class GameModule {
 
 
     public void roundStart(Dealer dealer,Player player){
-        System.out.println("\nHighSum Game\n");
         for(int i=1;i<5;i++){
-            System.out.println("\nDealer dealing cards - ROUND "+i+"\n");
+            GameUI.underLineSm();
+            System.out.println("Dealer dealing cards - ROUND "+i);
+            GameUI.underLineSm();
             dealer.dealCardToAll(dealer,player);
             dealer.showCardsOnHand(false);
             System.out.println();
             player.showCardsOnHand(true);
-            System.out.println("Show value: "+player.getTotalCardsValue());
+            System.out.println("Show value: "+player.getTotalCardsValue()+"\n");
             //bet.......
             boolean betting = player.betting(dealer,player,i);
             if(!betting){
@@ -57,13 +62,17 @@ public class GameModule {
     }
 
     public void roundEnd(Dealer dealer,Player player){
+        
         System.out.println("\nGame End - Dealer reveal hidden cards");
+        GameUI.underLine();
         dealer.showCardsOnHand(true);
         System.out.println("Show value: "+dealer.getTotalCardsValue());
         System.out.println();
         player.showCardsOnHand(true);
         System.out.println("Show value: "+player.getTotalCardsValue());
         player.comparePoint(dealer, player);
+
+           
     }
 
 

@@ -27,13 +27,13 @@ abstract class User {
             System.out.println("Wrong Name.Please enter your name again!\n");
             userLoginName(player);
         }else{
+            System.out.println("Hello "+player.getLoginName()+"!");
             userLoginPassword(player);
         }
     }
 
     public void userLoginPassword(Player player){
         
-        System.out.println("Hello"+player.getLoginName());
         String loginpassword = Keyboard.readString("Please Enter Your Password:");
         if(!checkPassword(loginpassword)){
             System.out.println("Wrong password.Please enter your password again!\n");
