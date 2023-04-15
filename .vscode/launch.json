@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "AttackGame",
+            "request": "launch",
+            "mainClass": "Lesson4.Game.AttackGame",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
             "name": "PetShelter",
             "request": "launch",
             "mainClass": "Lesson4.PetShelter",

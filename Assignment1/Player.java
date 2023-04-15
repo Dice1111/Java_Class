@@ -115,6 +115,7 @@ public class Player extends User {
         boolean  betting  = true;
         String turn = dealer.checkTurn(dealer, player);
         if(player.getChips()<10){
+            System.out.println("You have no enough chips. You loses.");
             return betting = false;
         }
         if(turn == "dealer"){
