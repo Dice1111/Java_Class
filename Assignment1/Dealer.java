@@ -7,7 +7,7 @@ public class Dealer extends Player {
     }
 
     public void shuffleCards() {
-        System.out.println("Game start! - Dealer shuffles Deck.\n");
+        System.out.println("Game start! - Dealer shuffles Deck.");
         deck.shuffle();
     }
 
@@ -60,18 +60,15 @@ public class Dealer extends Player {
         
     }
 
-
-
     public void roundReset(Dealer dealer,Player player){
         deck.appendCard(dealer.cardsOnHand);
         deck.appendCard(player.cardsOnHand);
         deck.removeAllCard(dealer.cardsOnHand);
         deck.removeAllCard(player.cardsOnHand);
-        dealer.setChips();
-        player.setChips();
+        dealer.setChips(100);
+        player.setChips(100);
         dealer.setBetOntable();
+        System.out.println("Dealer shuffles used cards and place behind the deck.");
     }
-
-
 
 }

@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class Deck {
+    
     private ArrayList<Card> cards;
     
     public Deck(){
@@ -30,12 +31,6 @@ public class Deck {
     public Card dealCard() {
         return cards.remove(0);
     }
-
-    // add nack one card
-    public void appendCard(Card card) {
-        cards.add(card);
-    }
-
     // add back arraylist of card
     public void appendCard(ArrayList<Card> cards) {
         for (Card c : cards) {
@@ -65,10 +60,10 @@ public class Deck {
             System.out.println(c);
         }
     }
+    
     public static void main(String[] args) {
         Deck deck = new Deck();
+        deck.shuffle();
         deck.showCards();
-        
     }
-    
 }

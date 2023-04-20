@@ -16,15 +16,13 @@ public class GameModule {
             GameUI.underLine();
             player.userLoginName(player);
             System.out.println("\nHighSum GAME");
-            GameUI.underLine();
-            player.showPlayerInfo();
-
+            GameUI.underLine();  
             boolean gameLoop = true;
             while(gameLoop){
+                player.showPlayerInfo();
                 dealer.shuffleCards();
                 dealer.dealCardToAll(dealer,player);
                 roundStart(dealer, player);
-                // roundEnd(dealer, player);
                 dealer.roundReset(dealer, player);
                 if(!checkAnotherGame()){
                 break;
@@ -35,7 +33,6 @@ public class GameModule {
         }
 
     }
-
 
     public void roundStart(Dealer dealer,Player player){
         for(int i=1;i<5;i++){
@@ -54,7 +51,6 @@ public class GameModule {
             }
             
             if(i==4){
-                System.out.println(betting);
                 roundEnd(dealer, player);
             }   
         } 
@@ -75,9 +71,8 @@ public class GameModule {
            
     }
 
-
     public boolean checkAnotherGame(){
-        boolean condition =Keyboard.readBoolean("Next Game? (Y/N) > ");
+        boolean condition = Keyboard.readBoolean("Next Game? (Y/N) > ");
         return condition;
     }
 

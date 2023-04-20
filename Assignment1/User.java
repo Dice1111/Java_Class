@@ -24,7 +24,7 @@ abstract class User {
     
         String loginName = Keyboard.readString("Please Enter Your Name:");
         if(!checkName(loginName)){
-            System.out.println("Wrong Name.Please enter your name again!\n");
+            System.out.println("Player not found! Please enter your name again!\n");
             userLoginName(player);
         }else{
             System.out.println("Hello "+player.getLoginName()+"!");

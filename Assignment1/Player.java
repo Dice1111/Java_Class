@@ -16,19 +16,22 @@ public class Player extends User {
 
     public void showPlayerInfo(){
         
-        System.out.println("\n"+getLoginName()+", you have "+getChips()+" chips.\n");
+        System.out.println("\n"+getLoginName()+", you have "+getChips()+" chips.");
+        GameUI.underLineSm();
     }
 
     public int getChips(){
         return this.chips;
     }
 
-    public void setChips(){
-        this.chips = 100;
+    public void setChips(int chips){
+        this.chips = chips;
     }
-    public void setChips(int amount){
-        this.chips += amount;
+
+    public void addChips(int chips){
+        this.chips += chips;
     }
+
     public void setBetOntable(){
         betOnTable = 0;
     }
@@ -40,8 +43,6 @@ public class Player extends User {
     public void addChipToTable(int amount){
        betOnTable += amount;
     }
-
-
 
     public int getBetOnTable(){
         return betOnTable;
@@ -143,11 +144,18 @@ public class Player extends User {
         }else if(turn=="player"){
 
             if(i>1){
-                String playerPlay = Keyboard.readString("Do you want to [C]all or [Q]uit?: ");
-                if(playerPlay.equalsIgnoreCase("Q")){
-                   System.out.println(player.getLoginName()+" Loses.");
-                   betting = false;
-                   return betting;
+                boolean Call = false;
+                while(!Call){
+                    String playerPlay = Keyboard.readString("Do you want to [C]all or [Q]uit?: ");
+                    if(playerPlay.equalsIgnoreCase("Q")){
+                    System.out.println(player.getLoginName()+" Loses.");
+                    betting = false;
+                    return betting;
+                    }else if(playerPlay.equalsIgnoreCase("C")){
+                        Call = true;
+                    }else{
+                        System.out.println("Please enter Q or C.");
+                    }
                 }
             }
             //player turn.....
@@ -165,7 +173,6 @@ public class Player extends User {
         return betting;
     }
 
-
     public int playerBet(Player player){
         int amount = Keyboard.readInt("Player call, state bet: ");
         while(amount>player.getChips()){
@@ -179,7 +186,7 @@ public class Player extends User {
     public void comparePoint(Dealer dealer,Player player){
         if(dealer.getTotalCardsValue()<player.getTotalCardsValue()){
             System.out.println( player.getLoginName()+" Wins");
-            player.setChips(player.getBetOnTable());
+            player.addChips(player.getBetOnTable());
             System.out.println(player.getLoginName()+", You have "+player.getChips()+" chips.");
         }else if(dealer.getTotalCardsValue()==player.getTotalCardsValue()){
             System.out.println("Draw.");
@@ -188,59 +195,4 @@ public class Player extends User {
         }
     }
 
-    // public void playerEnter(){
-    //     String input = Keyboard.readString("Press 1 to login:\nPress 2 to register:\n");
-    //     if(!checkInput(input)){
-    //         playerEnter();
-    //     }
-    //     if(input=="1"){
-    //         playerLogin();
-    //     }else if(input=="2"){
-    //         playerRegister();
-    //     }
-    // }
-
-    // public void playerLogin(){
-    //     String loginName = Keyboard.readString("Please Enter your name:");
-    //     for()
-    //     String password = Keyboard.readString("Please Enter your password:");
-
-    // }
-
-    // public void playerRegister(){
-
-    // }
-
-    // public boolean checkInput(String input){  
-    //     boolean valid = false;
-    //     while (!valid) {
-    //         try {
-    //             if(input.equals("1") || input.equals("2")){
-    //                 valid = true;
-    //             }else{
-    //                 throw new IllegalArgumentException();
-    //             }
-    //         } catch (IllegalArgumentException e) {
-    //             System.out.println("Please enter a valid number."); 
-    //             break; 
-    //         }  
-    //     }
-    //     return valid;
-    // 
-
-    public static void main(String[] args) {
-        Player player = new Player("A", "A", 100);
-        System.out.println("Welcome to the game.");
-        // player.playerEnter();
-        Deck deck = new Deck();
-        deck.shuffle();
-        Card card1 = deck.dealCard();
-        Card card2 = deck.dealCard();
-        Card card3 = deck.dealCard();
-        player.addCard(card1);
-        player.addCard(card2);
-        player.addCard(card3);
-        player.showCardsOnHand(true);
-        player.showTotalCardsValue();
-    }
 }

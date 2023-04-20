@@ -8,9 +8,10 @@ public class Test {
 
 		// function 1
 		try {
-			double[] numbers = { 0, 1, 2, 3 };
+			double[] numbers = {-1, -2,-10, -3, -4 };
 			double n = Lab1.largest(numbers);
-			assert n == 3;
+			System.out.println(n);
+			assert n == 10;
 			score += 1;
 			System.out.println("Function 1 passed");
 		} catch (AssertionError ae) {

@@ -4,15 +4,13 @@ public class Lab1 {
 	// function 1
 	public static double largest(double[] numbers) {
 		double largest = 0;// do not change
-
+		largest = numbers[0];
 		//you code here
 		double Temp =0;
 		for(int i=0;i<numbers.length;i++){
 			Temp = numbers[i];
 			if(Temp>=largest){
 				largest = Temp;
-			}else{
-				System.out.println("Error");
 			}
 		}
 		// end
