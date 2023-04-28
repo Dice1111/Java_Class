@@ -15,7 +15,9 @@ public class Unit_Coursework extends Unit{
     
     public double getOverallMarks(){
         //TODO: calculate coursework overall marks;
-        return 0;
+        double overAllMark = (this.a1*0.20)+(this.a2*0.30)+(this.exam*0.50);
+        return overAllMark;
+
     }
     
     public String getFinalGrade(){
@@ -25,6 +27,6 @@ public class Unit_Coursework extends Unit{
     public String getCSVString() {
     	//TODO: return a string in the following format
     	//studentID,unitCode,a1,a2,exam
-    	return "studentID,unitCode,a1,a2,exam";
+        return this.getStudentID()+","+this.unitCode+","+this.a1+","+this.a2+","+this.exam;
     }
 }

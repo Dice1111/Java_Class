@@ -11,17 +11,18 @@ public class Unit_Research extends Unit{
     
     public double getOverallMarks(){
     	//TODO: calculate research overall marks;
-        return 0;
+        double overAllMark=(this.proposal*0.30)+(this.finalDissertation*0.70);
+        return overAllMark;
     }
     
     public String getFinalGrade(){
-    	return Helper.computeCWGrade(getOverallMarks());
+    	return Helper.computeRGrade(getOverallMarks());
     }
     
     public String getCSVString() {
     	//TODO: return a string in the following format
     	//studentID,proposal,finalDissertation
-    	return "studentID,proposal,finalDissertation";
+        return this.getStudentID()+","+this.proposal+","+this.finalDissertation;
     }
    
 }
