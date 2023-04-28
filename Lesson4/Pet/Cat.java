@@ -1,4 +1,4 @@
-package Lesson4;
+package Lesson4.Pet;
 
 public class Cat extends Pet {
     public Cat(String name, String breed, double weight){
@@ -12,6 +12,10 @@ public class Cat extends Pet {
     @Override
     public void eat(){
         System.out.println(getName()+" eat food");
+    }
+
+    public void eat(String food){
+        System.out.println(getName()+" eat"+food);
     }
 
 }

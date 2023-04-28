@@ -1,4 +1,4 @@
-package Assignment1_Example;
+package Lesson4.GameImprove;
 public class Keyboard {
 
     public static String readString(String prompt) {

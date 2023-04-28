@@ -1,4 +1,4 @@
-package Lesson4;
+package Lesson4.Pet;
 
 abstract class Pet {
     private String name;

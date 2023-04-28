@@ -1,4 +1,4 @@
-package Lesson4;
+package Lesson4.Pet;
 import java.util.*;
 
 public class PetShelter {
@@ -23,11 +23,13 @@ public class PetShelter {
 
         for(Pet pet:pets){
             pet.sound();
-            pet.eat();
-
             if(pet instanceof Dog){
                 Dog dog = (Dog)pet;
-                dog.eat("bones");
+                dog.eat(" bones");
+            }
+            if(pet instanceof Cat){
+                Cat cat = (Cat)pet;
+                cat.eat(" fish");
             }
         }
         displayStats();
@@ -48,7 +50,7 @@ public class PetShelter {
             }
             total+= pet.getWeight();
         }
-        System.out.println("lightest: "+lightest.getName());
+        System.out.println("\nlightest: "+lightest.getName());
         System.out.println("heaviest: "+heaviest.getName());
         double ave = total/pets.size();
         System.out.println("ave: "+ave);

@@ -8,49 +8,28 @@
             "type": "java",
             "name": "AttackGame",
             "request": "launch",
-            "mainClass": "Lesson4.Game.AttackGame",
+            "mainClass": "Lesson4.GameImprove.AttackGame",
             "projectName": "java_ca0ae1b6"
         },
         {
             "type": "java",
-            "name": "PetShelter",
+            "name": "Current File",
             "request": "launch",
-            "mainClass": "Lesson4.PetShelter",
-            "projectName": "java_ca0ae1b6"
+            "mainClass": "${file}"
         },
         {
             "type": "java",
-            "name": "GameModule",
+            "name": "AndroidTest",
             "request": "launch",
-            "mainClass": "Assignment1_Example.GameModule",
-            "projectName": "java_ca0ae1b6"
-        },
-        {
-            "type": "java",
-            "name": "Example",
-            "request": "launch",
-            "mainClass": "Assignment1_Example.Example",
-            "projectName": "java_ca0ae1b6"
-        },
-        {
-            "type": "java",
-            "name": "Player",
-            "request": "launch",
-            "mainClass": "Assignment1_Example.Player",
-            "projectName": "java_ca0ae1b6"
+            "mainClass": "AndroidTest",
+            "projectName": "java_ca0ae1b6",
+            "vmArgs": "-enableassertions"
         },
         {
             "type": "java",
             "name": "Deck",
             "request": "launch",
-            "mainClass": "Assignment1_Example.Deck",
-            "projectName": "java_ca0ae1b6"
-        },
-        {
-            "type": "java",
-            "name": "Player",
-            "request": "launch",
-            "mainClass": "Player",
+            "mainClass": "Deck",
             "projectName": "java_ca0ae1b6"
         },
         {
@@ -62,16 +41,121 @@
         },
         {
             "type": "java",
-            "name": "Deck",
+            "name": "Helper",
             "request": "launch",
-            "mainClass": "Deck",
+            "mainClass": "Lesson1.Helper",
             "projectName": "java_ca0ae1b6"
         },
         {
             "type": "java",
-            "name": "Card",
+            "name": "Q1",
             "request": "launch",
-            "mainClass": "Card",
+            "mainClass": "Lesson1.Q1",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "Q10",
+            "request": "launch",
+            "mainClass": "Lesson1.Q10",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "Q11",
+            "request": "launch",
+            "mainClass": "Lesson1.Q11",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "Q13",
+            "request": "launch",
+            "mainClass": "Lesson1.Q13",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "Q14",
+            "request": "launch",
+            "mainClass": "Lesson1.Q14",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "Q15",
+            "request": "launch",
+            "mainClass": "Lesson1.Q15",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "Q16",
+            "request": "launch",
+            "mainClass": "Lesson1.Q16",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "Q16B",
+            "request": "launch",
+            "mainClass": "Lesson1.Q16B",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "Q2",
+            "request": "launch",
+            "mainClass": "Lesson1.Q2",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "Q3",
+            "request": "launch",
+            "mainClass": "Lesson1.Q3",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "Q4",
+            "request": "launch",
+            "mainClass": "Lesson1.Q4",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "Q5",
+            "request": "launch",
+            "mainClass": "Lesson1.Q5",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "Q6",
+            "request": "launch",
+            "mainClass": "Lesson1.Q6",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "Q7",
+            "request": "launch",
+            "mainClass": "Lesson1.Q7",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "Q8",
+            "request": "launch",
+            "mainClass": "Lesson1.Q8",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "Q9",
+            "request": "launch",
+            "mainClass": "Lesson1.Q9",
             "projectName": "java_ca0ae1b6"
         },
         {
@@ -90,25 +174,81 @@
         },
         {
             "type": "java",
-            "name": "Q16B",
+            "name": "Circle",
             "request": "launch",
-            "mainClass": "Lesson1.Q16B",
+            "mainClass": "Lesson3.Circle",
             "projectName": "java_ca0ae1b6"
         },
         {
             "type": "java",
-            "name": "Current File",
+            "name": "Cylinder",
             "request": "launch",
-            "mainClass": "${file}",
+            "mainClass": "Lesson3.Cylinder",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "Person",
+            "request": "launch",
+            "mainClass": "Lesson3.Person",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "Rectangle",
+            "request": "launch",
+            "mainClass": "Lesson3.Rectangle",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "Square",
+            "request": "launch",
+            "mainClass": "Lesson3.Square",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "Staff",
+            "request": "launch",
+            "mainClass": "Lesson3.Staff",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "Student",
+            "request": "launch",
+            "mainClass": "Lesson3.Student",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "AttackGame",
+            "request": "launch",
+            "mainClass": "Lesson4.Game.AttackGame",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "PetShelter",
+            "request": "launch",
+            "mainClass": "Lesson4.PetShelter",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "RPSTest",
+            "request": "launch",
+            "mainClass": "RPSTest",
+            "projectName": "java_ca0ae1b6",
             "vmArgs": "-enableassertions"
         },
         {
             "type": "java",
-            "name": "AndroidTest",
+            "name": "ResultProcessSystem",
             "request": "launch",
-            "mainClass": "AndroidTest",
-            "projectName": "java_ca0ae1b6",
-            "vmArgs": "-enableassertions"
+            "mainClass": "ResultProcessSystem",
+            "projectName": "java_ca0ae1b6"
         },
         {
             "type": "java",
@@ -123,8 +263,7 @@
             "name": "Test",
             "request": "launch",
             "mainClass": "Test",
-            "projectName": "java_ca0ae1b6",
-            "vmArgs": "-enableassertions"
+            "projectName": "java_ca0ae1b6"
         }
     ]
 }

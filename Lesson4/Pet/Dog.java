@@ -1,4 +1,4 @@
-package Lesson4;
+package Lesson4.Pet;
 
 public class Dog extends Pet{
     private boolean microchipped;
@@ -10,15 +10,15 @@ public class Dog extends Pet{
 
     @Override
     public void sound(){
-        System.out.println(getName()+"woff woff");
+        System.out.println(getName()+" woff woff");
     }
     @Override
     public void eat(){
-        System.out.println(getName()+"food");
+        System.out.println(getName()+" food");
     }
 
     public void eat(String food){
-        System.out.println(getName()+food);
+        System.out.println(getName()+" eat"+food);
     }
     public void  display(){
         super.display();

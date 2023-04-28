@@ -64,7 +64,8 @@ public class Player extends User {
                 System.out.print(c + " ");
             }
             System.out.println();
-        }else if(!roundEnd){
+        }
+        else if(!roundEnd){
             System.out.print("<HIDDEN CARD> ");
             for(int i =1; i<cardsOnHand.size();i++){
                 System.out.print(cardsOnHand.get(i) + " ");
