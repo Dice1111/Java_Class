@@ -6,8 +6,8 @@ public class AttackGame {
     }
     public void run() {
         println("Game started");
-        int avatar1 = Keyboard.readInt("Player 1 enter 1 for Ranger, 2 for Digger:");
-        int avatar2 = Keyboard.readInt("Player 2 enter 1 for Ranger, 2 for Digger:");
+        int avatar1 = Keyboard.readInt("Player 1 enter 1 for Ranger, 2 for Digger, 3 for Monster:");
+        int avatar2 = Keyboard.readInt("Player 2 enter 1 for Ranger, 2 for Digger, 3 for Monster:");
         
         AvatarInterface player1 = AvatarFactory.getAvatar(avatar1);
         AvatarInterface player2 = AvatarFactory.getAvatar(avatar2);

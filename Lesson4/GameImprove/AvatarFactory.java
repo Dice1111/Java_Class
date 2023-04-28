@@ -7,6 +7,7 @@ public class AvatarFactory {
         switch(choise){
             case 1: avatar = new Ranger(); break;
             case 2: avatar = new Digger(); break;
+            case 3: avatar = new Monster(); break;
         } 
         return avatar;
     }

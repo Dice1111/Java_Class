@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BankDemo",
+            "request": "launch",
+            "mainClass": "Lesson5.BankDemo",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
             "name": "AttackGame",
             "request": "launch",
             "mainClass": "Lesson4.GameImprove.AttackGame",
