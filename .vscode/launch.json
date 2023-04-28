@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ReadFromCSV",
+            "request": "launch",
+            "mainClass": "Lesson6.ReadFromCSV",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
             "name": "ReadFromTextFile",
             "request": "launch",
             "mainClass": "Lesson6.ReadFromTextFile",
