@@ -8,13 +8,11 @@ public class Student_Coursework extends Student{
     
     public String getFinalGrade(){
     	//TODO: return the student final grade
-        String finalGrade = "";
+        String finalGrade;
         try{
-            if(unit != null) {
-                finalGrade = unit.getFinalGrade();
-            }else{
-                throw new NullPointerException();
-            }
+            
+            finalGrade = unit.getFinalGrade();
+            
         }catch(NullPointerException e) {
             finalGrade = "No unit attempt";
         }
