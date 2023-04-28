@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ReadFromTextFile",
+            "request": "launch",
+            "mainClass": "Lesson6.ReadFromTextFile",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "WriteToTextFile",
+            "request": "launch",
+            "mainClass": "Lesson6.WriteToTextFile",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "ReadFromBinFile",
+            "request": "launch",
+            "mainClass": "Lesson6.ReadFromBinFile",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "WriteToBinFile",
+            "request": "launch",
+            "mainClass": "Lesson6.WriteToBinFile",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
             "name": "BankDemo",
             "request": "launch",
             "mainClass": "Lesson5.BankDemo",
