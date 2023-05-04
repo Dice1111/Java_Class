@@ -11,13 +11,6 @@ abstract public class Student {
         this.id = id;
         this.enrolmentType = enrolmentType;
     }
-
-    // public void display(){
-    //     System.out.println("student id: "+this.id);
-    //     System.out.println("first name: "+this.firstName);
-    //     System.out.println("last name: "+this.lastName);
-    //     System.out.println("enrolement: "+this.enrolmentType);
-    // }
    
     public String getEnrolmentType() {
         return this.enrolmentType;

@@ -41,20 +41,18 @@ public class ResultProcessSystem {
                     continue;
                 }
 				String[] studentData = line.split(",");
-				String studentID = studentData[0].trim();
+				String type = studentData[0].trim();
 				String firstName = studentData[1].trim();
 				String lastName = studentData[2].trim();
 				String id = studentData[3].trim();
-				if(studentID.equals("C")){
+				if(type.equals("C")){
 					Student_Coursework student = new Student_Coursework(firstName, lastName, id);
 					students.add(student);
-				}else if(studentID.equals("R")){
+				}else if(type.equals("R")){
 					Student_Research student = new Student_Research(firstName, lastName, id);
 					students.add(student);
 				}
-				
-			}
-			
+			}			
 		}catch(FileNotFoundException ex) {
 			System.out.println("Student data file not found");
 		}

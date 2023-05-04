@@ -11,7 +11,7 @@ public class Unit_Research extends Unit{
     
     public double getOverallMarks(){
     	//TODO: calculate research overall marks;
-        double overAllMark=(this.proposal*0.30)+(this.finalDissertation*0.70);
+        double overAllMark=this.proposal*0.30+this.finalDissertation*0.70;
         return overAllMark;
     }
     

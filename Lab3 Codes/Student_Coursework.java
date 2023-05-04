@@ -8,7 +8,7 @@ public class Student_Coursework extends Student{
     
     public String getFinalGrade(){
     	//TODO: return the student final grade
-        String finalGrade;
+        String finalGrade="NIL";
         try{
             
             finalGrade = unit.getFinalGrade();

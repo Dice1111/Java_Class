@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Lesson8",
+            "request": "launch",
+            "mainClass": "Lesson8.Lesson8",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "CreatePlayersBin",
+            "request": "launch",
+            "mainClass": "CreatePlayersBin",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "Admin",
+            "request": "launch",
+            "mainClass": "Admin",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
+            "name": "Test",
+            "request": "launch",
+            "mainClass": "ptk.Test",
+            "projectName": "java_ca0ae1b6"
+        },
+        {
+            "type": "java",
             "name": "ReadFromCSV",
             "request": "launch",
             "mainClass": "Lesson6.ReadFromCSV",
