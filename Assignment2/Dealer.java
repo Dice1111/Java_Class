@@ -2,7 +2,7 @@ public class Dealer extends Player {
     private Deck deck;
 
     public Dealer() {
-        super("Dealer", "", 100);
+        super("Dealer", "", 9000000);
         deck = new Deck();
     }
 
@@ -65,8 +65,8 @@ public class Dealer extends Player {
         deck.appendCard(player.cardsOnHand);
         deck.removeAllCard(dealer.cardsOnHand);
         deck.removeAllCard(player.cardsOnHand);
-        dealer.setChips(100);
-        player.setChips(100);
+        dealer.setChips(9000000);
+        // player.setChips(100);
         dealer.setBetOntable();
         System.out.println("Dealer shuffles used cards and place behind the deck.");
     }

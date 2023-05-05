@@ -2,10 +2,11 @@ public class GameModule {
 
     private Dealer dealer;
     private Player player;
+    private Admin admin;
 
     public GameModule() {
         dealer = new Dealer();
-        player = new Player("IcePeak", "password", 100);
+        admin = new Admin();
     }
 
     public void run() {
@@ -13,7 +14,7 @@ public class GameModule {
         while(run){
             System.out.println("HighSum GAME");
             GameUI.underLine();
-            player.userLoginName(player);
+            player = admin.userLogin();
             System.out.println("\nHighSum GAME");
             GameUI.underLine();  
             boolean gameLoop = true;
@@ -24,6 +25,7 @@ public class GameModule {
                 roundStart(dealer, player);
                 dealer.roundReset(dealer, player);
                 if(!checkAnotherGame()){
+                CreatePlayersBin.createPlayersBin(admin.getPlayersArray());
                 break;
                 }
                 
@@ -66,7 +68,7 @@ public class GameModule {
         player.showCardsOnHand(true);
         System.out.println("Show value: "+player.getTotalCardsValue());
         player.comparePoint(dealer, player);
-
+        
            
     }
 
