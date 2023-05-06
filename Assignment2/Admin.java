@@ -122,11 +122,11 @@ public class Admin extends User{
             }
             output.close();
         } catch (ClassNotFoundException e) {
-            
+            System.out.println("class not found.");
         }catch(FileNotFoundException e){
-
+            System.out.println("File not found.");
         }catch(IOException e){
-
+            
         }
     }
 
@@ -204,6 +204,8 @@ public class Admin extends User{
 
             if(loginName.equals(this.getLoginName())){
                 adminPasswordCheck();
+            }else if(players.isEmpty()){
+                System.out.println("No player is inside database. Create Player.");
             }else{
                 for(int i =0;i<players.size();i++){
                     if(loginName.equals(players.get(i).getLoginName())){

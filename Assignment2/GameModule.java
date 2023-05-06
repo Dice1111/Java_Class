@@ -24,13 +24,14 @@ public class GameModule {
                 dealer.dealCardToAll(dealer,player);
                 roundStart(dealer, player);
                 dealer.roundReset(dealer, player);
-                if(!checkAnotherGame()){
                 CreatePlayersBin.createPlayersBin(admin.getPlayersArray());
-                break;
-                }
-                
+                if(!checkGame("Next Round? Y/N: ")){
+                    break;
+                }   
             }
-            break;
+            if(!checkGame("Next Player? Y/N: ")){
+                break;
+            }
         }
 
     }
@@ -72,8 +73,8 @@ public class GameModule {
            
     }
 
-    public boolean checkAnotherGame(){
-        boolean condition = Keyboard.readBoolean("Next Game? (Y/N) > ");
+    public boolean checkGame(String question){
+        boolean condition = Keyboard.readBoolean(question);
         return condition;
     }
 
