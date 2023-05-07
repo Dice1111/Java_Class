@@ -7,12 +7,9 @@ public class Admin extends User{
 
 
     public Admin(){
-        super("Admin","password");
+        super("Admin","");
         players = new ArrayList<Player>();
         readAdminPassword();
-        if(getHashPassword()==null || getHashPassword()==""){
-            createAdminPassword("password");
-        }
         loadPlayers();
     }
 
@@ -27,9 +24,11 @@ public class Admin extends User{
             ObjectOutputStream opStream = new ObjectOutputStream(file);
             
             opStream.writeObject(Utility.getHash(password));  
+            System.out.println("Admin password file created.");
             opStream.close(); 
-            System.out.println("admin password file created.");
+            
         } catch (IOException e) {
+            System.out.println("IOException Error.");
         }
     }
 
@@ -43,6 +42,7 @@ public class Admin extends User{
                 try {
                     String password = (String)output.readObject();
                     setHashPassword(password);
+                    System.out.println("Admin password loaded.");
                 } catch (EOFException e) {
                     endOfFile = true;
                     // TODO: handle exception
@@ -52,12 +52,12 @@ public class Admin extends User{
         } catch (ClassNotFoundException e) {
             // TODO: handle exception
         }catch(FileNotFoundException e){
-
-        }catch(IOException e){
-
+            System.out.println("No admin password file found! Will create default file.");
+            createAdminPassword("password");
+            readAdminPassword();
+        }catch(IOException e){  
+            
         }
-        
-        System.out.println("admin password set.");
     }
 
     private void getUserOption(){
@@ -80,12 +80,18 @@ public class Admin extends User{
 
     public void createPlayer(){
         String playerName = Keyboard.readString("Enter Player Name: ");
+        for(int i = 0;i<players.size();i++){
+            if(playerName.equals(players.get(i).getLoginName())){
+                System.out.println("Player already exist!");
+                return;
+            }
+        }
         String password =  Keyboard.readString("Enter Password: ");
         int chips = Keyboard.readInt("Enter chip amount: ");
         Player player = new Player(playerName,password,chips);
         players.add(player);
-        CreatePlayersBin.createPlayersBin(players);
         System.out.println("Player created!\n");
+        CreatePlayersBin.createPlayersBin(players);  
         displayPlayer(); 
     }
 
@@ -124,7 +130,7 @@ public class Admin extends User{
         } catch (ClassNotFoundException e) {
             System.out.println("class not found.");
         }catch(FileNotFoundException e){
-            System.out.println("File not found.");
+            System.out.println("Player file not found. Create new Players.");
         }catch(IOException e){
             
         }
@@ -183,7 +189,6 @@ public class Admin extends User{
             System.out.println("Password Confirmed.");
             String newPassword = Keyboard.readString("Enter new Password: ");
             this.createAdminPassword(newPassword);
-            this.readAdminPassword();
             System.out.println("Password reset successful.");
 
         }else{

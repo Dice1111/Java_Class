@@ -9,6 +9,7 @@ public class CreatePlayersBin {
             ObjectOutputStream opStream = new ObjectOutputStream(file);
             for(Player player:players){
                 opStream.writeObject(player); 
+                System.out.println("Player info saved.");
             }   
             opStream.close(); 
         } catch (IOException e) {

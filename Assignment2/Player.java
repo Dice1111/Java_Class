@@ -190,6 +190,9 @@ public class Player extends User {
             System.out.println(player.getLoginName()+", You have "+player.getChips()+" chips.");
         }else if(dealer.getTotalCardsValue()==player.getTotalCardsValue()){
             System.out.println("Draw.");
+            player.addChips(betOnTable/2);
+            System.out.println("Return own bet amount");
+            System.out.println(player.getLoginName()+","+"You are left with "+player.getChips());
         }else if(dealer.getTotalCardsValue()>player.getTotalCardsValue()){
             System.out.println(player.getLoginName()+ " Loses");
         }
