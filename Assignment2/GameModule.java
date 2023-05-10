@@ -24,7 +24,7 @@ public class GameModule {
                 dealer.dealCardToAll(dealer,player);
                 roundStart(dealer, player);
                 dealer.roundReset(dealer, player);
-                CreatePlayersBin.createPlayersBin(admin.getPlayersArray());
+                admin.createPlayersBin();
                 if(!checkGame("Next Round? Y/N: ")){
                     break;
                 }   

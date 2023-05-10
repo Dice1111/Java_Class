@@ -179,6 +179,11 @@ public class Player extends User {
             System.out.println("Not enough Chips.");
             amount = Keyboard.readInt("Player call, state bet: ");    
         }
+
+        while (amount<0){
+            System.out.println("Please enter valid amount.");
+            amount = Keyboard.readInt("Player call, state bet: ");   
+        }
         
         return amount;
     }
@@ -195,6 +200,7 @@ public class Player extends User {
             System.out.println(player.getLoginName()+","+"You are left with "+player.getChips());
         }else if(dealer.getTotalCardsValue()>player.getTotalCardsValue()){
             System.out.println(player.getLoginName()+ " Loses");
+            System.out.println(player.getLoginName()+","+"You are left with "+player.getChips());
         }
     }
 
