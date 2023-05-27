@@ -2,8 +2,9 @@ package Lesson1;
 
 public class Q4 {
     public static void main(String[] args) {
-        String s1= "apple";
-        String  s2 = "Apple";
+        String  s2 = "c";
+        String s1 = "c";
+        
 
         int n1=s1.compareTo(s2);
 
